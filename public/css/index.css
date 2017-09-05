@@ -1,0 +1,7 @@
+body{background: rgb(245,245,245)}
+
+header,.container{width: 90%;margin: 0 auto; display: block}
+
+
+.usual-group{display: inline-block}
+.usual-group span {width: 220px; height:40px; display: block; float: left; padding: 0 5px; margin: 14px auto}

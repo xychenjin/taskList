@@ -1,0 +1,138 @@
+
+[2017-09-05 12-04:42] Not Found!  D:\WWW\common\taskList\service\App.php 48
+#0 D:\WWW\common\taskList\service\App.php(17): Service\App->boot()
+#1 D:\WWW\common\taskList\public\entry.php(13): Service\App->handle()
+#2 {main}
+[2017-09-05 12-09:41] Not Found!  D:\WWW\common\taskList\service\App.php 48
+#0 D:\WWW\common\taskList\service\App.php(17): Service\App->boot()
+#1 D:\WWW\common\taskList\public\entry.php(13): Service\App->handle()
+#2 {main}
+[2017-09-05 12-09:41] Not Found!  D:\WWW\common\taskList\service\App.php 48
+#0 D:\WWW\common\taskList\service\App.php(17): Service\App->boot()
+#1 D:\WWW\common\taskList\public\entry.php(13): Service\App->handle()
+#2 {main}
+[2017-09-05 12-09:50] Not Found!  D:\WWW\common\taskList\service\App.php 48
+#0 D:\WWW\common\taskList\service\App.php(17): Service\App->boot()
+#1 D:\WWW\common\taskList\public\entry.php(13): Service\App->handle()
+#2 {main}
+[2017-09-05 12-09:51] Not Found!  D:\WWW\common\taskList\service\App.php 48
+#0 D:\WWW\common\taskList\service\App.php(17): Service\App->boot()
+#1 D:\WWW\common\taskList\public\entry.php(13): Service\App->handle()
+#2 {main}
+[2017-09-05 12-09:51] Not Found!  D:\WWW\common\taskList\service\App.php 48
+#0 D:\WWW\common\taskList\service\App.php(17): Service\App->boot()
+#1 D:\WWW\common\taskList\public\entry.php(13): Service\App->handle()
+#2 {main}
+[2017-09-05 12-09:52] Not Found!  D:\WWW\common\taskList\service\App.php 48
+#0 D:\WWW\common\taskList\service\App.php(17): Service\App->boot()
+#1 D:\WWW\common\taskList\public\entry.php(13): Service\App->handle()
+#2 {main}
+[2017-09-05 12-09:53] Not Found!  D:\WWW\common\taskList\service\App.php 48
+#0 D:\WWW\common\taskList\service\App.php(17): Service\App->boot()
+#1 D:\WWW\common\taskList\public\entry.php(13): Service\App->handle()
+#2 {main}
+[2017-09-05 12-10:00] Not Found!  D:\WWW\common\taskList\service\App.php 48
+#0 D:\WWW\common\taskList\service\App.php(17): Service\App->boot()
+#1 D:\WWW\common\taskList\public\entry.php(13): Service\App->handle()
+#2 {main}
+[2017-09-05 12-10:01] Not Found!  D:\WWW\common\taskList\service\App.php 48
+#0 D:\WWW\common\taskList\service\App.php(17): Service\App->boot()
+#1 D:\WWW\common\taskList\public\entry.php(13): Service\App->handle()
+#2 {main}
+[2017-09-05 12-10:01] Not Found!  D:\WWW\common\taskList\service\App.php 48
+#0 D:\WWW\common\taskList\service\App.php(17): Service\App->boot()
+#1 D:\WWW\common\taskList\public\entry.php(13): Service\App->handle()
+#2 {main}
+[2017-09-05 12-10:54] Not Found!  D:\WWW\common\taskList\service\App.php 48
+#0 D:\WWW\common\taskList\service\App.php(17): Service\App->boot()
+#1 D:\WWW\common\taskList\public\entry.php(13): Service\App->handle()
+#2 {main}
+[2017-09-05 12-10:55] Not Found!  D:\WWW\common\taskList\service\App.php 48
+#0 D:\WWW\common\taskList\service\App.php(17): Service\App->boot()
+#1 D:\WWW\common\taskList\public\entry.php(13): Service\App->handle()
+#2 {main}
+[2017-09-05 12-10:56] Not Found!  D:\WWW\common\taskList\service\App.php 48
+#0 D:\WWW\common\taskList\service\App.php(17): Service\App->boot()
+#1 D:\WWW\common\taskList\public\entry.php(13): Service\App->handle()
+#2 {main}
+[2017-09-05 12-10:58] Not Found!  D:\WWW\common\taskList\service\App.php 48
+#0 D:\WWW\common\taskList\service\App.php(17): Service\App->boot()
+#1 D:\WWW\common\taskList\public\entry.php(13): Service\App->handle()
+#2 {main}
+[2017-09-05 12-10:59] Not Found!  D:\WWW\common\taskList\service\App.php 48
+#0 D:\WWW\common\taskList\service\App.php(17): Service\App->boot()
+#1 D:\WWW\common\taskList\public\entry.php(13): Service\App->handle()
+#2 {main}
+[2017-09-05 12-11:53] Not Found!  D:\WWW\common\taskList\service\App.php 48
+#0 D:\WWW\common\taskList\service\App.php(17): Service\App->boot()
+#1 D:\WWW\common\taskList\public\entry.php(13): Service\App->handle()
+#2 {main}
+[2017-09-05 12-11:53] Not Found!  D:\WWW\common\taskList\service\App.php 48
+#0 D:\WWW\common\taskList\service\App.php(17): Service\App->boot()
+#1 D:\WWW\common\taskList\public\entry.php(13): Service\App->handle()
+#2 {main}
+[2017-09-05 12-12:22] Not Found!  D:\WWW\common\taskList\service\App.php 48
+#0 D:\WWW\common\taskList\service\App.php(17): Service\App->boot()
+#1 D:\WWW\common\taskList\public\entry.php(13): Service\App->handle()
+#2 {main}
+[2017-09-05 12-12:24] Not Found!  D:\WWW\common\taskList\service\App.php 48
+#0 D:\WWW\common\taskList\service\App.php(17): Service\App->boot()
+#1 D:\WWW\common\taskList\public\entry.php(13): Service\App->handle()
+#2 {main}
+[2017-09-05 12-12:24] Not Found!  D:\WWW\common\taskList\service\App.php 48
+#0 D:\WWW\common\taskList\service\App.php(17): Service\App->boot()
+#1 D:\WWW\common\taskList\public\entry.php(13): Service\App->handle()
+#2 {main}
+[2017-09-05 12-12:34] Not Found!  D:\WWW\common\taskList\service\App.php 48
+#0 D:\WWW\common\taskList\service\App.php(17): Service\App->boot()
+#1 D:\WWW\common\taskList\public\entry.php(13): Service\App->handle()
+#2 {main}
+[2017-09-05 12-12:34] Not Found!  D:\WWW\common\taskList\service\App.php 48
+#0 D:\WWW\common\taskList\service\App.php(17): Service\App->boot()
+#1 D:\WWW\common\taskList\public\entry.php(13): Service\App->handle()
+#2 {main}
+[2017-09-05 12-12:41] Not Found!  D:\WWW\common\taskList\service\App.php 48
+#0 D:\WWW\common\taskList\service\App.php(17): Service\App->boot()
+#1 D:\WWW\common\taskList\public\entry.php(13): Service\App->handle()
+#2 {main}
+[2017-09-05 12-12:42] Not Found!  D:\WWW\common\taskList\service\App.php 48
+#0 D:\WWW\common\taskList\service\App.php(17): Service\App->boot()
+#1 D:\WWW\common\taskList\public\entry.php(13): Service\App->handle()
+#2 {main}
+[2017-09-05 12-12:42] Not Found!  D:\WWW\common\taskList\service\App.php 48
+#0 D:\WWW\common\taskList\service\App.php(17): Service\App->boot()
+#1 D:\WWW\common\taskList\public\entry.php(13): Service\App->handle()
+#2 {main}
+[2017-09-05 18:14:08] Not Found!  D:\WWW\common\taskList\service\App.php 49
+#0 D:\WWW\common\taskList\service\App.php(17): Service\App->boot()
+#1 D:\WWW\common\taskList\public\entry.php(13): Service\App->handle()
+#2 {main}
+[2017-09-05 18:14:11] Not Found!  D:\WWW\common\taskList\service\App.php 49
+#0 D:\WWW\common\taskList\service\App.php(17): Service\App->boot()
+#1 D:\WWW\common\taskList\public\entry.php(13): Service\App->handle()
+#2 {main}
+[2017-09-05 18:14:11] Not Found!  D:\WWW\common\taskList\service\App.php 49
+#0 D:\WWW\common\taskList\service\App.php(17): Service\App->boot()
+#1 D:\WWW\common\taskList\public\entry.php(13): Service\App->handle()
+#2 {main}
+[2017-09-05 18:14:11] Not Found!  D:\WWW\common\taskList\service\App.php 49
+#0 D:\WWW\common\taskList\service\App.php(17): Service\App->boot()
+#1 D:\WWW\common\taskList\public\entry.php(13): Service\App->handle()
+#2 {main}
+[2017-09-05 18:14:11] Not Found!  D:\WWW\common\taskList\service\App.php 49
+#0 D:\WWW\common\taskList\service\App.php(17): Service\App->boot()
+#1 D:\WWW\common\taskList\public\entry.php(13): Service\App->handle()
+#2 {main}
+jkjjkknlnlknnlnkl
+[2017-09-05 18:17:02] Not Found!  D:\WWW\common\taskList\service\App.php 49
+#0 D:\WWW\common\taskList\service\App.php(17): Service\App->boot()
+#1 D:\WWW\common\taskList\public\entry.php(13): Service\App->handle()
+#2 {main}
+[2017-09-05 18:18:30] Not Found!  D:\WWW\common\taskList\service\App.php 49
+#0 D:\WWW\common\taskList\service\App.php(17): Service\App->boot()
+#1 D:\WWW\common\taskList\public\entry.php(13): Service\App->handle()
+#2 {main}
+[2017-09-05 18:18:44] Not Found!  D:\WWW\common\taskList\service\App.php 49
+#0 D:\WWW\common\taskList\service\App.php(17): Service\App->boot()
+#1 D:\WWW\common\taskList\public\entry.php(13): Service\App->handle()
+#2 {main}
