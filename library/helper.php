@@ -37,3 +37,56 @@ if(! function_exists('public_path')) {
         return app_path(). '/../public';
     }
 }
+
+if(! function_exists('static_path')) {
+    function static_path() {
+        return app_path(). '/../resource/views';
+    }
+}
+
+if(! function_exists('view')) {
+    function view($view, $params = []) {
+        extract($params, EXTR_SKIP);
+
+        $filepath = static_path().'/'. strtr($view, '.', '/') ;
+
+        if (file_exists($filename =  $filepath . '.view.php') || file_exists($filename = $filepath . '.php')) {
+            require_once $filename;
+        }
+
+        return ;
+    }
+}
+
+if(! function_exists('config')) {
+    function config($key) {
+        return require_once app_path(). '/../config/'. $key .'.php';
+    }
+}
+
+if(! function_exists('route')) {
+    function route($key, $params = []) {
+        $router = json_decode(file_get_contents(compile_file()), true);
+        foreach ($router as $item) {
+            list($uri,, $aliasName) = $item;
+            if ($key === $aliasName) {
+                return getRequestName(). '/' . ltrim($uri, '/') .(empty($params) ? '': '?' . http_build_query($params));
+            }
+        }
+        return  '/';
+    }
+}
+
+if(! function_exists('static_url')) {
+    function static_url($file) {
+        return getRequestName(). '/'. ltrim($file, '/');
+    }
+}
+
+if(! function_exists('getRequestName')) {
+    function getRequestName() {
+        return $_SERVER['REQUEST_SCHEME'] .':'.( $_SERVER['SERVER_PORT'] == '80' ?  '': $_SERVER['SERVER_PORT'])
+            . '//'. $_SERVER['SERVER_NAME'];
+    }
+}
+

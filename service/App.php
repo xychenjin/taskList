@@ -27,11 +27,11 @@ class App
             $controllerNamespace = 'App\Http\Controllers';
             list($requestQueryUri) = explode('?', $requestUri);
 
-            if (! file_exists($compileFile = compile_file())) {
+//            if (! file_exists($compileFile = compile_file())) {
                 _autoCompileRouter();
-            }
+//            }
 
-            $compiledRouter = file_get_contents($compileFile);
+            $compiledRouter = file_get_contents(compile_file());
             $compiledRouter = json_decode($compiledRouter, true);
 
             foreach ($compiledRouter as $key => $router) {
@@ -49,13 +49,13 @@ class App
             throw new Exception('Not Found! ', 404);
         } catch (Exception $e) {
             $this->render($e->getCode());
-            $this->log($e->getMessage() . ' '. $e->getFile(). ' '. $e->getLine(). "\n". $e->getTraceAsString());
+            $this->log($e->getCode() . ' '.$e->getMessage() . ' '. $e->getFile(). ' '. $e->getLine(). "\n". $e->getTraceAsString());
         }
     }
 
     private function render($code = 404)
     {
-        if (file_exists($file = './error/'. $code. '.html')) {
+        if (file_exists($file = static_path() . './error/'. $code. '.html')) {
             require $file;
             return ;
         }

@@ -7,6 +7,6 @@
  */
 
 return [
-    ['/', 'SiteController@index', 'home'],
-    ['/countClick', 'SiteController@countClick', 'countClick'],
+    ['/', 'www\SiteController@index', 'home'],
+    ['/countClick', 'www\SiteController@countClick', 'countClick'],
 ];
