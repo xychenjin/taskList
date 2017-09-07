@@ -18,6 +18,11 @@ class ReferController extends Controller
         return view('refer.phpinfo');
     }
 
+    public function php()
+    {
+        return view('refer.php');
+    }
+
     public function mysqlInfo()
     {
         return view('refer.mysql');
@@ -31,6 +36,11 @@ class ReferController extends Controller
     public function hostInfo()
     {
         return view('refer.host');
+    }
+
+    public function otherInfo()
+    {
+        return view('refer.other');
     }
 
     public function reference()
@@ -48,10 +58,104 @@ class ReferController extends Controller
         throw new \Exception('Forbidden', 403);
     }
 
-    public function look()
+    public function server()
     {
+        $eco = '';
         foreach ($_SERVER as $key => $item) {
-            echo "$key => $item ", "<br/>";
+            $eco .= "<b style='color: red'>$key</b> => $item <br/>";
         }
+        return view('refer.server', ['eco' => $eco]);
+    }
+
+    public function referDetail()
+    {
+        $server = isset(func_get_args()[0]['q']) ? func_get_args()[0]['q'] : '';
+
+        if (empty($server)) {
+            $servers = [
+                '_SERVER' => $_SERVER,
+                '_SESSION' => isset($_SESSION) ? $_SESSION : [],
+                '_GET' => $_GET,
+                '_POST' => $_POST,
+                '_REQUEST' => $_REQUEST,
+                'GLOBALS' => $GLOBALS,
+                '_FILES' => $_FILES,
+                '_COOKIE' => $_COOKIE,
+                '_ENV' => $_ENV,
+            ];
+            $eco = '';
+            foreach ($servers as $key => $item) {
+                $eco .= <<<EOT
+    <h1>\$$key</h1>            
+EOT;
+
+                $eco .= (new static())->dispatch($item);
+            }
+            ;
+            isset($servers['_FILES']) && ! empty($servers['_FILES']) && ! empty($servers['_FILES']['image']) && ! empty($servers['_FILES']['image']['name']) && move_uploaded_file($servers['_FILES']['image']['tmp_name'],  upload_path() . '/'. $filename = md5( date('Ymd').'/'. $servers['_FILES']['image']['name']) . $ext = '.'. pathinfo($servers['_FILES']['image']['name'], PATHINFO_EXTENSION));
+
+            ! isset($filename) ? : $eco .=  "<img src='". getRequestName(). '/upload/'. $filename . "' />";
+        } else {
+            switch (strtoupper($server)) {
+                case '_SERVER':
+                    $server = $_SERVER;
+                    break;
+                case '_SESSION':
+                    $server = isset($_SESSION) ? $_SESSION : [];
+                    break;
+                case '_GET':
+                    $server = $_GET;
+                    break;
+                case '_POST':
+                    $server = $_POST;
+                    break;
+                case '_REQUEST':
+                    $server = $_REQUEST;
+                    break;
+                case 'GLOBALS':
+                    $server = $GLOBALS;
+                    break;
+                case '_FILES':
+                    $server = $_FILES;
+                    break;
+                case '_COOKIE':
+                    $server = $_COOKIE;
+                    break;
+                case '_ENV':
+                    $server = $_ENV;
+                    break;
+            }
+
+            $eco = (new static())->dispatch($server);
+
+        }
+
+        return view('refer.server', ['eco' => $eco]);
+    }
+
+    private function dispatch($server)
+    {
+        $eco = '';
+        if (is_string($server)) {
+            $eco .= "<b style='color: green'>$server</b><br/>";
+        }
+
+        if (is_array($server)) {
+            foreach ($server as $key => $item) {
+                if (is_array($item)) {
+                    $temp = '';
+
+                    foreach ($item as $kk => $value) {
+                        $temp .= '<br/>'.str_repeat('&nbsp;', 20 ). $kk . ' => '. json_encode($value);
+                    }
+
+                    $eco .= "<b style='color: green'>$key</b> => $temp <br/>";
+                } else {
+                    $eco .= "<b style='color: green'>$key</b> => ". json_encode($item)." <br/>";
+                }
+            }
+
+        }
+        return $eco;
     }
 }

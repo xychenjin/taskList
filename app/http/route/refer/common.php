@@ -8,15 +8,21 @@
 
 return [
     ['/phpinfo', 'www\ReferController@phpInfo', 'phpinfo'],
+    ['/php', 'www\ReferController@php', 'php'],
     ['/mysql', 'www\ReferController@mysqlInfo', 'mysqlinfo'],
     ['/http', 'www\ReferController@httpdInfo', 'httpdinfo'],
     ['/host', 'www\ReferController@hostInfo', 'hostinfo'],
+    ['/other', 'www\ReferController@otherInfo', 'otherinfo'],
+    ['/refer/detail', 'www\ReferController@referDetail', 'referdetail'],
+
+
     ['/refer', 'www\ReferController@reference', 'refer'],
     ['/proc', 'www\ReferController@proc', 'proc'],
 
 
 
     ['/refer/test', 'www\ReferController@test', 'test'],
-    ['/look', 'www\ReferController@look', 'look'],
+    ['/server', 'www\ReferController@server', 'server'],
 
+    ['/about', 'www\AboutController@index', 'about.index'],
 ];

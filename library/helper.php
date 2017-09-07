@@ -90,3 +90,16 @@ if(! function_exists('getRequestName')) {
     }
 }
 
+
+if (! function_exists('upload_path')) {
+    function upload_path() {
+        return public_path() . '/upload';
+    }
+}
+
+if (! function_exists('get_uri')) {
+    function get_uri() {
+        list($uri) = explode('?',$_SERVER['REQUEST_URI']);
+        return $uri;
+    }
+}

@@ -25,28 +25,26 @@ endforeach;
 
 
 $context = <<<EOT
-<div class="container">
-    <div><p>常用地址：</p></div>
+    <div class="usual-body"><p>本机常用地址：</p></div>
 
-    <div>
+    <div class="usual-body">
         $foreachBody 
     </div>
 
-    <div>
-        <input type="text" name="index" class="" />
-        <input type="button" value="搜索一下" class=""/>
+    <div class="usual-body">
+        <input type="text" name="index" class="input" />
+        <input type="button" value="搜索一下" class="btn btn-submit"/>
     </div>
 
     <div>
         <p></p>
     </div>
-</div>
 
 <footer></footer>
 
 <script type="text/javascript">
     $(function () {
-        $(".link").bind('dbClick', clickCount);
+        $(".link").bind('click', clickCount);
     }) ;
 </script>
 EOT;

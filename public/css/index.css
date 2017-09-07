@@ -2,6 +2,14 @@ body{background: rgb(245,245,245)}
 
 header,.container{width: 90%;margin: 0 auto; display: block}
 
+.usual-body{width: 100%;height: auto; margin: 10px 0;position: relative}
 
 .usual-group{display: inline-block}
-.usual-group span {width: 220px; height:40px; display: block; float: left; padding: 0 5px; margin: 14px auto}
+.usual-group span {width: 220px; height:auto; display: block; float: left; padding: 0 5px; }
+.usual-group span p {margin: 14px auto; display: block;cursor: pointer}
+.usual-group span p:hover {background: orangered;color: white}
+
+.usual-body input.input {width: 68%;height: 40px;border: none; padding: 2px 20px;line-height: inherit; font-size: 17px;}
+.usual-body input.btn {width: 100px;height: 44px;border: none;border-radius:2px;line-height: inherit; font-size: 18px;font-weight:bold;font-family: "Lucida Console, Monaco, monospace";background: dodgerblue;color: darkblue;letter-spacing: 0.1rem;}
+.usual-body input.btn:hover {background: orangered;color: white}
+

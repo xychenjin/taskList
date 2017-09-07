@@ -8,14 +8,14 @@
 
 $title = 'HTTP版本信息';
 
-$filename = 'C:\Windows\System32\drivers\etc\hosts';
+$filename = 'D:\wamp\xampp\apache\conf\httpd.conf';
 
-$file = file($filename);
 $context = <<<EOT
     <p>$filename</p>
+    <p>Apache官网：<a href="http://httpd.apache.org" >http://httpd.apache.org</a></p>
 EOT;
 
-$file = file('D:\wamp\xampp\apache\conf\httpd.conf');
+$file = file($filename);
 
 foreach ($file as $line_num => $line) {
     $context .= " $line_num ". $line . "<br/>";
