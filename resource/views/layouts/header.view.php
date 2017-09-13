@@ -1,10 +1,14 @@
 <header>
     <nav>
-        <span class="<?= (get_uri() == ''|| get_uri() == '/') ? 'active':''  ?>">
+        <span class="">
             <a href="http://dd.com.cn/" title="查看旧版本">返回旧版</a>
         </span>
 
-        <span class="<?= get_uri() == '/php' ? 'active':'' ?>">
+        <span class="<?= (get_uri() == ''|| get_uri() == '/') ? 'active':''  ?>">
+            <a href="<?= route('home') ?>" title="首页">首页</a>
+        </span>
+
+        <span class="<?= (get_uri() == '/php' || strpos(get_uri(), 'php') !== false ) ? 'active':'' ?>">
             <a href="<?= route('php') ?>" title="查看PHP相关内容">PHP相关</a>
         </span>
 

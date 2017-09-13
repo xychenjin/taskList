@@ -12,9 +12,24 @@ use \Exception;
 
 class App
 {
+    private function config()
+    {
+        return $this->configs = [
+            [
+                'Input' => 'Service\Input'
+            ]
+        ];
+    }
+
     public function handle()
     {
+        $this->check();
+
         $this->boot();
+
+//        $this->config();
+
+//        $this->auload();
     }
 
     private function boot()
@@ -50,6 +65,24 @@ class App
         } catch (Exception $e) {
             $this->render($e->getCode());
             $this->log($e->getCode() . ' '.$e->getMessage() . ' '. $e->getFile(). ' '. $e->getLine(). "\n". $e->getTraceAsString());
+        }
+    }
+
+
+    private function auload()
+    {
+        foreach ($this->configs as $item) {
+            foreach ($item as $aliasName => $value) {
+                $aliasName = new \ReflectionClass($value);
+                $aliasName->newInstance();
+            }
+        }
+    }
+
+    private function check()
+    {
+        if (! session_id()) {
+            session_start();
         }
     }
 

@@ -55,7 +55,12 @@ class ReferController extends Controller
 
     public function test()
     {
-        throw new \Exception('Forbidden', 403);
+        return view('refer.test');
+    }
+
+    public function jsAnimate()
+    {
+        return view('refer.js.animate');
     }
 
     public function server()
@@ -67,7 +72,7 @@ class ReferController extends Controller
         return view('refer.server', ['eco' => $eco]);
     }
 
-    public function referDetail()
+    public function paramDetail()
     {
         $server = isset(func_get_args()[0]['q']) ? func_get_args()[0]['q'] : '';
 
@@ -158,4 +163,10 @@ EOT;
         }
         return $eco;
     }
+
+    public function param()
+    {
+        return view('refer.param');
+    }
+
 }

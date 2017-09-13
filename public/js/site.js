@@ -4,11 +4,13 @@
 function clickCount() {
     var dom = $(this);
     $.post(
-        dom.data('/countClick'),
-        {name: dom.data('url')},
+        '/countClick',
+        {name: dom.attr('href')},
         function (res) {
-            window.location.href = dom.data('url');
+            // window.location.href = dom.data('url');
+            console.info('1111');
         }
     );
+
 }
 

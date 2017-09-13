@@ -10,8 +10,8 @@ EOT;
         $url = strpos($originUrl, 'http') === false ? 'http://'. $originUrl : $originUrl;
         $foreachBody .= <<<EOT
     <span>
-                    <p data-url="$url" class="link">$host</p>
-                    <p data-url="$url" class="link">$originUrl</p>
+                    <a href="$url" class="link style-bold" target="_blank">$host</a>
+                    <a href="$url" class="link" target="_blank">$originUrl</a>
                 </span>
 EOT;
 
@@ -37,7 +37,7 @@ $context = <<<EOT
     </div>
 
     <div>
-        <p></p>
+        <p ></p>
     </div>
 
 <footer></footer>
@@ -49,4 +49,10 @@ $context = <<<EOT
 </script>
 EOT;
 
-view('layouts.master', compact('context', 'title'));
+$javascriptContent = <<<EOT
+<script type="text/javascript">
+</script>
+EOT;
+
+
+view('layouts.master', compact('context', 'title', 'javascriptContent'));

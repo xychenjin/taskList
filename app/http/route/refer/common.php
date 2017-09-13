@@ -14,6 +14,8 @@ return [
     ['/host', 'www\ReferController@hostInfo', 'hostinfo'],
     ['/other', 'www\ReferController@otherInfo', 'otherinfo'],
     ['/refer/detail', 'www\ReferController@referDetail', 'referdetail'],
+    ['/php/param/detail', 'www\ReferController@paramDetail', 'php.param.detail'],
+    ['/php/param', 'www\ReferController@param', 'php.param'],
 
 
     ['/refer', 'www\ReferController@reference', 'refer'],

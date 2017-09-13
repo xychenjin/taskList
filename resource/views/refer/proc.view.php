@@ -12,6 +12,7 @@ $context = <<<EOT
     <p>2.请求路由及参数解析</p>
     <p>3.模板查找及变量赋值</p>
     <p>4.资源及数据缓存机制</p>
+    <p>5.对话访问和用户认证机制</p>
 EOT;
 
 view('layouts.master', compact('context'));

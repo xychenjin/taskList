@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="<?= static_url('css/style.css') ?>" charset="UTF-8" />
     <link rel="stylesheet" href="<?= static_url('css/index.css') ?>" charset="UTF-8" />
     <link rel="shortcut icon" href="<?= static_url('favicon.ico') ?>" />
+    <?= isset($linkStyle) ? $linkStyle : null ?>
+    <?= isset($linkJavascript) ? $linkJavascript : null ?>
 </head>
 <body>
 <?= view('layouts.header') ?>
@@ -19,6 +21,7 @@
     <?= $context ?>
 </div>
 
+<?= isset($javascriptContent) ? $javascriptContent:null ?>
 </body>
 </html>
 
