@@ -9,7 +9,9 @@
 namespace App\Http\Controllers\Www;
 
 
-class JsController
+use App\Http\Controllers\Controller;
+
+class JsController extends Controller
 {
     public function index()
     {

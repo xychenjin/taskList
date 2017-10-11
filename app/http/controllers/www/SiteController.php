@@ -27,6 +27,14 @@ class SiteController extends Controller
         $input = new Input();
         $name = $input::get('name');
 
-        echo json_encode(['msg' => 'ok', 'code' => 0, 'data' => ['name' => $name] ]);
+        $file = @file_get_contents($filename = storage_path().'/json/'. md5("url_click_count"));
+
+        $arrs = json_decode($file, true);
+
+        $arrs[$name] = isset($arrs[$name]) ? ($arrs[$name] + 1) : 1;
+
+        file_put_contents($filename, json_encode($arrs));
+
+        echo json_encode(['msg' => 'ok', 'code' => 0, 'data' => ['times' => $arrs[$name]] ]);
     }
 }

@@ -13,7 +13,7 @@ $linkStyle = static_url('/css/self.css');
 
 $context = <<<EOT
     <p class="label-control">PHP官网：</p>
-    <p><a href="http://php.net" target="_blank">http://php.net/</a></p>
+    <p><a href="http://php.net/manual/zh/" target="_blank">http://php.net/</a></p>
     
     <p class="label-control">本地环境时时变量：</p>
     <p><a href="$globalParamUrl" target="_blank">$globalParamUrl</a></p>

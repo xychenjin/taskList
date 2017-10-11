@@ -56,7 +56,7 @@ class App
                     $className = strpos($class,
                         $controllerNamespace) !== false ? $class : $controllerNamespace . '\\' . $class;
                     parse_str($requestQueryString, $params);
-                    return call_user_func([$className, $method], $params);
+                    return call_user_func_array([$className, $method], $params);
                 }
                 unset($compiledRouter[$key]);
             }

@@ -3,3 +3,13 @@ body{width: 100%; height:auto;margin: 0;border: 0 }
 a{text-decoration: none}
 
 header .active{color: red; background: blue}
+
+pre b{font-weight: inherit;  font-size: 17px;}
+pre object{color: darkred}
+pre method{color: darkblue}
+pre property{color: darkgreen}
+pre params{color:darkorange}
+pre define{color: darkgreen}
+
+.toggle{-moz-user-select: none;-khtml-user-select: none;user-select: none;}
+.link:hover {background: orangered;color: white}

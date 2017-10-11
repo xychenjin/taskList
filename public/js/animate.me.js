@@ -19,7 +19,11 @@ $.fn.initAnimation = function (inputMoveElement) {
         originTop: this.originElementTop,
         originLeft: this.originElementLeft,
         destinationTop: this.bodyHeight - this.originElementTop - (2 * this.innerElementHeight) - 10,
-        destinationLeft: this.bodyWidth - this.originElementLeft - (2 * this.innerElementWidth)
+        destinationLeft: this.bodyWidth - this.originElementLeft - (2 * this.innerElementWidth),
+        bodyHeight:this.bodyHeight,
+        bodyWidth:this.bodyWidth,
+        innerElementHeight:this.innerElementHeight,
+        innerElementWidth:this.innerElementWidth,
     };
 
     initPosition(moveElement);
@@ -28,38 +32,44 @@ $.fn.initAnimation = function (inputMoveElement) {
         click: function () {
             var dom = $(this);
 
-            if (!intervalCounter) {
+            if (!intervalMovementCounter) {
+
                 animateThis(dom);
 
-                var count = 0;
-                intervalCounter = setInterval(function () {
-                    animateThis(dom);
-                    count++;
-                    $(".auto-run").text(count);
-                }, 2000);
+                //加入运行次数计时器
+                addIntervalMovementCounter(dom);
+                //加入运行次数时间计算器
+                addIntervalMovementTimeCounter();
 
                 dom.text(innerBtnText(1));
                 dom.css({color: "yellow", background: "red"});
 
             } else {
-                clearInterval(intervalCounter);
-                intervalCounter = null;
-                $(".auto-run").text(0);
+                clearInterval(intervalMovementCounter);
+                clearInterval(intervalMovementTimeCounter);
+                intervalMovementCounter = null;
+                // $(".auto-run").text(0);
             }
         },
         mouseenter:function () {
-            if (intervalCounter)
-            $(this).text(innerBtnText(3));
+            if (intervalMovementCounter) {
+                $(this).text(innerBtnText(3));
+                $(this).css({color:"white"});
+            }
+
         },
         mouseleave:function () {
-            if (! intervalCounter)
-            $(this).text(innerBtnText(0));
+            if (! intervalMovementCounter) {
+                $(this).text(innerBtnText(0));
+                $(this).css({color:"black"});
+            }
         }
     });
 };
 
 // });
-var intervalCounter = null;
+var intervalMovementCounter = null;
+var intervalMovementTimeCounter = null;
 
 var innerBtnText = function (index) {
     var txt = [
@@ -75,33 +85,59 @@ var innerBtnText = function (index) {
 
 var position = {};
 
+var accuracy = 80;
+
+var pointer = {
+    rightDown : function (elementOffsetTop, elementOffsetLeft) {
+        return (elementOffsetTop <= parseInt(position.destinationTop) + parseInt(position.originTop) + accuracy)
+            && (elementOffsetTop >= parseInt(position.destinationTop) + parseInt(position.originTop) - accuracy)
+            && (elementOffsetLeft <= parseInt(position.destinationLeft) + parseInt(position.originLeft) + accuracy)
+            && (elementOffsetLeft >= parseInt(position.destinationLeft) + parseInt(position.originLeft) - accuracy );
+    },
+    rightUp : function (elementOffsetTop, elementOffsetLeft) {
+        return (elementOffsetTop <= position.originTop + accuracy )
+        && (elementOffsetTop >= position.originTop - accuracy)
+        && (elementOffsetLeft <= parseInt(position.destinationLeft) + parseInt(position.originLeft) + accuracy)
+        && (elementOffsetLeft >= parseInt(position.destinationLeft) + parseInt(position.originLeft) - accuracy);
+    },
+    leftUp : function (elementOffsetTop, elementOffsetLeft) {
+        return (elementOffsetTop <= position.originTop + accuracy)
+            && (elementOffsetTop >= position.originTop - accuracy)
+            && (elementOffsetLeft <= position.originLeft + accuracy)
+            && (elementOffsetLeft >= position.originLeft - accuracy);
+    },
+    leftDown : function (elementOffsetTop, elementOffsetLeft) {
+        return ( elementOffsetTop <= parseInt(position.destinationTop) + parseInt(position.originTop) + accuracy)
+            && ( elementOffsetTop >= parseInt(position.destinationTop) + parseInt(position.originTop) - accuracy)
+            && (elementOffsetLeft >= position.originLeft - accuracy)
+            && (elementOffsetLeft <= position.originLeft + accuracy);
+    },
+};
+
 //随机数生成方向
 var makeDirection = function(element) {
     var direction = [];
     var elementOffsetTop = element[0].offsetTop;
     var elementOffsetLeft = element[0].offsetLeft;
     switch (true) {
-        case elementOffsetTop == parseInt(position.destinationTop) + parseInt(position.originTop)
-        && elementOffsetLeft == parseInt(position.destinationLeft) + parseInt(position.originLeft)
+        case pointer.rightDown(elementOffsetTop, elementOffsetLeft)
         :
             direction = ['UP', 'LEFT'];
             break;
-        case elementOffsetTop == position.originTop
-        && elementOffsetLeft == parseInt(position.destinationLeft) + parseInt(position.originLeft)
+        case pointer.rightUp(elementOffsetTop, elementOffsetLeft)
         :
             direction = ['DOWN', 'LEFT'];
             break;
-        case elementOffsetTop == parseInt(position.destinationTop) + parseInt(position.originTop)
-        && elementOffsetLeft == position.originLeft
+        case pointer.leftDown(elementOffsetTop, elementOffsetLeft)
         :
             direction = ['UP', 'RIGHT'];
             break;
-        case elementOffsetTop == position.originTop
-        && elementOffsetLeft == position.originLeft
+        case pointer.leftUp(elementOffsetTop, elementOffsetLeft)
         :
             direction = ['DOWN', 'RIGHT'];
             break;
     }
+
     return direction[Math.round(Math.random())];
 };
 
@@ -110,36 +146,36 @@ function animateThis(element) {
     var elementOffsetTop = element[0].offsetTop;
     var elementOffsetLeft = element[0].offsetLeft;
     var direction = makeDirection(element);
-
     switch (direction) {
         case "UP":
             destination.top = 0;
-            destination.left = (elementOffsetTop == parseInt(position.destinationTop) + parseInt(position.originTop)
-            && elementOffsetLeft == position.originLeft) ? 0 : position.destinationLeft ;
-
+            destination.left = pointer.leftDown(elementOffsetTop, elementOffsetLeft) ? 0 : position.destinationLeft ;
             break;
+
         case "DOWN":
             destination.top = position.destinationTop;
-
-            destination.left = (elementOffsetTop == position.originTop
-            && elementOffsetLeft == position.originLeft) ? 0 : position.destinationLeft;
+            destination.left = pointer.leftUp(elementOffsetTop, elementOffsetLeft) ? 0 : position.destinationLeft;
             break;
+
         case "LEFT":
             destination.left = 0;
-
-            destination.top = (elementOffsetTop == position.originTop
-            && elementOffsetLeft == parseInt(position.destinationLeft) + parseInt(position.originLeft)) ? 0 : position.destinationTop;
-
+            destination.top = pointer.rightUp(elementOffsetTop, elementOffsetLeft) ? 0 : position.destinationTop;
             break;
 
         case "RIGHT":
             destination.left = position.destinationLeft;
-            destination.top = (elementOffsetTop == position.originTop
-            && elementOffsetLeft == position.originLeft) ? 0 : position.destinationTop;
+            destination.top = pointer.leftUp(elementOffsetTop, elementOffsetLeft) ? 0 : position.destinationTop;
             break;
     }
+
+    destination && element ? readyAnimate(element) : '';
     destination && element ? doAnimate(element, destination) : '';
 }
+
+var readyAnimate = function (moveElement) {
+    moveElement.text(innerBtnText(1));
+    moveElement.css({color:"yellow", background: "red"});
+};
 
 var doAnimate = function(element, destination){
     element.animate(destination, 1200, "swing", function() {
@@ -164,4 +200,43 @@ var initPosition = function(moveElement) {
         moveElement.css({color:"yellow", background: "red"});
     }
 
+};
+
+var addIntervalMovementCounter = function (dom) {
+    var count = 0;
+    intervalMovementCounter = setInterval(function () {
+        animateThis(dom);
+        count++;
+
+        $(".auto-run").text(count);
+    }, 2000);
+};
+
+var addIntervalMovementTimeCounter = function () {
+    var date = (new Date()).toTimeString();
+    var timeCounter = 1;
+    intervalMovementTimeCounter = setInterval(function () {
+        var autoDefiner = $(".auto-definer");
+        if (! autoDefiner.find("small").length) {
+            autoDefiner.append(" 开始时间：" + date + " 已运行：<small>" + timeCounter + "</small> s");
+        } else {
+            autoDefiner.find("small").text(formatIntervalTimeCounter(timeCounter));
+        }
+        timeCounter ++;
+    }, 1000);
+};
+
+var formatIntervalTimeCounter = function (time) {
+    switch (true) {
+        case time < 60 :
+            return time;
+        case time >= 60 && time < 3600:
+            return (parseInt(time/60) < 10 ? "0" + parseInt(time/60) : parseInt(time/60)) + ":" + (time%60 < 10 ? "0"+ time%60 : time%60);
+        case time >= 3600:
+            var hour = parseInt(time / 3600);
+            var minute = time - hour * 3600;
+            var second = time - parseInt(time / 3600) * 3600 - parseInt(minute / 60) * 60;
+            return (hour < 10 ? "0" + hour : hour) + (minute > 60 ? (parseInt(minute/60) < 10 ? "0"+ parseInt(minute/60) : parseInt(minute/60)) : "00")
+                + (second < 10 ? "0" + second : second);
+    }
 };
