@@ -171,6 +171,7 @@ EOT;
 
     public function jsTest()
     {
+        // add line.
         return view('refer.jsTest');
     }
     
