@@ -27,4 +27,5 @@ return [
     ['/server', 'www\ReferController@server', 'server'],
 
     ['/about', 'www\AboutController@index', 'about.index'],
+    ['/refer/jsTest', 'www\ReferController@jsTest', 'js.test'],
 ];

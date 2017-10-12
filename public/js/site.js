@@ -8,7 +8,7 @@ function clickCount() {
         {name: dom.attr('href')},
         function (res) {
             // window.location.href = dom.data('url');
-            console.info('1111');
+            console.info(res);
         }
     );
 

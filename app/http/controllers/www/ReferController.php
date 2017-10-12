@@ -169,4 +169,9 @@ EOT;
         return view('refer.param');
     }
 
+    public function jsTest()
+    {
+        return view('refer.jsTest');
+    }
+    
 }
