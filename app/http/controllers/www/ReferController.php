@@ -10,6 +10,7 @@ namespace App\Http\Controllers\Www;
 
 
 use App\Http\Controllers\Controller;
+use Service\Input;
 
 class ReferController extends Controller
 {
@@ -172,6 +173,19 @@ EOT;
     public function jsTest()
     {
         // add line.
+        ;
+
+
+            
+
+        die(1);
+        foreach (fgets($stdin) as $key => $val) {
+            var_dump($val);
+        }
+
+        fclose($stdin);
+        die(1);
+
         return view('refer.jsTest');
     }
     

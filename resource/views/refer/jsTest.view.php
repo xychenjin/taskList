@@ -29,6 +29,19 @@ $context = <<<EOT
     function abc(a, b, c) {
       console.info("abc.arguments.length : " + abc.arguments.length);
     }
+    
+    window.onload = function() {
+        var count = 1 ;
+        var t = setInterval(function() {
+           console.info(count);
+           if (count >= 100) {
+               clearInterval(t);
+           }
+           
+           count ++;
+        }, 1000);
+    }
+    
 </script>  
 EOT;
 
