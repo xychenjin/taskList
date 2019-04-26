@@ -28,4 +28,9 @@ return [
 
     ['/about', 'www\AboutController@index', 'about.index'],
     ['/refer/jsTest', 'www\ReferController@jsTest', 'js.test'],
+    ['/refer/brother', 'www\ReferController@brother', 'refer.brother'],
+    ['/refer/jd', 'www\ReferController@jd', 'refer.jd'],
+
+
+    ['/golang', 'www\GolangController@index', 'golang.index'],
 ];

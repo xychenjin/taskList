@@ -25,7 +25,18 @@ $context = <<<EOT
     <p><a href="http://php.net/manual/zh/migration70.new-features.php">http://php.net/manual/zh/migration70.new-features.php</a> </p>
     
     <p class="label-control">PHP 下载：</p>
-    <p><a href="http://php.net/downloads.php">http://php.net/downloads.php</a> </p>
+    <p><a href="http://php.net/downloads.php">http://php.net/downloads.php</a> </p> 
+       
+       <p class="label-control">PHP 对象和类：</p>
+    <p><a href="http://php.net/language.oop5">http://php.net/language.oop5</a> </p>       
+    
+    <p class="label-control">PHP 必读：</p>
+    <p><a href="https://laravel-china.github.io/php-the-right-way/">https://laravel-china.github.io/php-the-right-way/</a> </p>       
+    
+    <p class="label-control">PHP laravel参考：</p>
+    <p><a href="http://cs.laravel-china.org">http://cs.laravel-china.org</a> </p>
+    
+    
 
 EOT;
 

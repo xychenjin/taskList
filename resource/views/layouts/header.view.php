@@ -1,7 +1,9 @@
 <header>
     <nav>
         <span class="">
-            <a href="http://dd.com.cn/" title="查看旧版本">返回旧版</a>
+            返回
+            <a href="http://dd.com.cn/" title="查看旧版本" class="btn">旧版</a>|
+            <a href="http://2018.m/" title="查看旧版本" class="btn">新版</a>
         </span>
 
         <span class="<?= (get_uri() == ''|| get_uri() == '/') ? 'active':''  ?>">
@@ -24,6 +26,11 @@
             <a href="<?= route('hostinfo') ?>" title="查看本地hosts域名配置">HOSTS</a>
         </span>
 
+
+        <span class="<?= get_uri() == '/golang' ? 'active':'' ?>">
+            <a href="<?= 'http://golang.org' ?>" title="Golang">Golang</a>
+        </span>
+
         <span class="">
             <a href="">DEBUG</a>
         </span>
@@ -34,6 +41,10 @@
 
         <span class="<?= get_uri() == '/about' ? 'active':'' ?>">
             <a href="<?= route('about.index') ?>" title="关于本站的特别说明">关于</a>
+        </span>
+
+        <span>
+            <a href="#" class="change-bg">换个背景?</a>
         </span>
     </nav>
 </header>

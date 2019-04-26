@@ -1,4 +1,4 @@
-body{background: rgb(245,245,245)}
+body{background: url(../imgs/2/am.jpg); opacity: 0.2}
 
 header,.container{width: 90%;margin: 0 auto; display: block}
 
@@ -9,8 +9,15 @@ header,.container{width: 90%;margin: 0 auto; display: block}
 .usual-group span p {margin: 14px auto; display: block;cursor: pointer}
 .usual-group span .link:hover {background: orangered;color: white}
 
-.usual-body input.input {width: 68%;height: 40px;border: none; padding: 2px 20px;line-height: inherit; font-size: 17px;}
+.usual-body input.input {width: 68%;height: 40px;border: 1px lightslategray solid; padding: 2px 20px;line-height: inherit; font-size: 17px;box-shadow: gray}
 .usual-body input.btn {width: 100px;height: 44px;border: none;border-radius:2px;line-height: inherit; font-size: 18px;font-weight:bold;font-family: "Lucida Console, Monaco, monospace";background: dodgerblue;color: darkblue;letter-spacing: 0.1rem;}
 .usual-body input.btn:hover {background: orangered;color: white}
 
+
 .style-bold{font-weight: bold}
+
+.edit-label,.delete-label{cursor: pointer}
+
+a{color: #ffffff}
+a:visited{color: blue}
+a:hover{color:blue;cursor: pointer}

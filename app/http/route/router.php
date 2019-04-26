@@ -9,4 +9,5 @@
 return [
     ['/', 'www\SiteController@index', 'home'],
     ['/countClick', 'www\SiteController@countClick', 'countClick'],
+    ['/deleteCookie', 'www\SiteController@deleteCookie', 'deleteCookie'],
 ];
