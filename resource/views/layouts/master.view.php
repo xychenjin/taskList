@@ -8,6 +8,7 @@
     <title><?= isset($title) ? $title : '简易框架开发' ?></title>
     <script src="<?= static_url('js/jquery-1.10.2.js') ?>" charset="UTF-8" type="text/javascript"></script>
     <script src="<?= static_url('js/site.js') ?>" charset="UTF-8" type="text/javascript"></script>
+
     <link rel="stylesheet" href="<?= static_url('css/style.css') ?>" charset="UTF-8" />
     <link rel="stylesheet" href="<?= static_url('css/index.css') ?>" charset="UTF-8" />
     <link rel="shortcut icon" href="<?= static_url('favicon.ico') ?>" />
@@ -22,6 +23,7 @@
 </div>
 
 <?= isset($javascriptContent) ? $javascriptContent:null ?>
+<script src="<?= static_url('js/header.js') ?>" charset="UTF-8" type="text/javascript"></script>
 </body>
 </html>
 
