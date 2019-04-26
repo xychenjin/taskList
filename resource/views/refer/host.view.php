@@ -5,7 +5,7 @@
  * Date: 2017/9/6
  * Time: 18:15
  */
-
+error_reporting(0);
 $title = 'HOST版本信息';
 
 $filename = 'C:\Windows\System32\drivers\etc\hosts';

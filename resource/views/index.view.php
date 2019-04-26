@@ -24,7 +24,7 @@ EOT;
 
     endforeach;
     $foreachBody .= <<<EOT
-<span>更多</span>
+<a>更多</a>
 </div>
 EOT;
 endforeach;

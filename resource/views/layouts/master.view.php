@@ -22,8 +22,11 @@
     <?= $context ?>
 </div>
 
+<?= view('layouts.footer') ?>
+
 <?= isset($javascriptContent) ? $javascriptContent:null ?>
 <script src="<?= static_url('js/header.js') ?>" charset="UTF-8" type="text/javascript"></script>
+<script src="<?= static_url('js/footer.js') ?>" charset="UTF-8" type="text/javascript"></script>
 </body>
 </html>
 

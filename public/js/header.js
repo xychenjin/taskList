@@ -28,10 +28,10 @@ $("body").on('click', '.change-bg', function() {
 
     lastPng = path;
     console.info(lastPng);
-    $("body").css({
-        "background-image": "url(" + path + ")",
-    });
 
+    showBg(path);
+
+    $(".footer .hide-bg").html("一键隐藏背景");
     return false;
 });
 
@@ -67,8 +67,60 @@ function loadBg() {
 
     lastPng = path;
     console.info(path);
-    $("body").css({
-        "background-image": "url(" + path + ")",
-        "color" : "#ffffff",
-    });
+
+    showBg(path);
+}
+
+$("body").on('click', ".footer .hide-bg", function () {
+
+    var dom = $(this);
+
+    toggleBg(dom);
+
+});
+
+$(".footer .hide-bg").hover(function () {
+
+    var dom = $(this);
+
+   dom.css("opacity", 1);
+}, function () {
+
+    var dom = $(this);
+
+    dom.css("opacity", 0);
+});
+
+
+
+function showBg(path) {
+    $("body").css("background", "url(" + path + ")");
+    $("body a").css("color", "#ffffff");
+}
+
+function hideBg() {
+    $("body").css("background", "none");
+    $("body").css("opacity", "1");
+    $("body a").css("color", "#000000");
+}
+
+function toggleBg(dom) {
+    if (dom.html() == '一键隐藏背景') {
+        hideBg();
+        dom.html("一键加载背景");
+    } else {
+        loadBg();
+        dom.html("一键隐藏背景");
+    }
+}
+
+function getBg(dom) {
+    var topimg = $("body").css("backgroundImage");
+
+    topimg = topimg.split('(')[1].split(')')[0];
+    if(topimg.indexOf('"') > -1){
+        topimg = topimg.split('"')[1].split('"')[0];
+    }
+
+    return $(dom).attr("href", topimg);
 }

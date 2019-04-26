@@ -44,7 +44,8 @@
         </span>
 
         <span>
-            <a href="#" class="change-bg">换个背景?</a>
+            <a href="#" class="change-bg">换个背景?</a>&nbsp;
+            <a href="#" onclick="getBg(this)" target="_blank">查看</a>
         </span>
     </nav>
 </header>
