@@ -14,7 +14,7 @@ $file = file($filename);
 $context = "";
 
 foreach ($file as $line_num => $line) {
-    $context .= trim($line) ? " $line_num ". iconv( 'GBK', 'utf-8', $line ). "<br/>" : "<br/>";
+    $context .= trim($line) ? " $line_num ". $line/*iconv( 'GBK', 'utf-8', $line )*/. "<br/>" : "<br/>";
 }
 
 $filemtime = date('Y-m-d H:i:s', filemtime($filename) );

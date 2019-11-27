@@ -108,7 +108,7 @@ EOT;
 foreach ($historyRecorders as $key => $value) :
     $context .= <<<EOT
     
-<span class="view-history" style="width: auto;margin: 0 10px;cursor:pointer;" search-keywords="$key" title ="$value">$key</span>
+<span class="view-history" style="width: auto;margin: 0 10px;cursor:pointer;" search-keywords="$key" title ="$key">$key</span>
 EOT;
 endforeach;
 
@@ -235,11 +235,11 @@ $javascriptContent = <<<EOT
     }
     
     window.addEventListener('offline', function() {
-        alert('离线了');
+        // alert('离线了');
     });
     
     window.addEventListener('online', function() {
-        alert('上线了');
+        // alert('上线了');
     });
     
     var elements = document.getElementsByClassName("view-history");
@@ -258,6 +258,8 @@ $javascriptContent = <<<EOT
         
     }
 </script>
+
+
 
 EOT;
 

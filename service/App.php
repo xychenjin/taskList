@@ -36,6 +36,8 @@ class App
     {
         try {
             ini_set('date.timezone', 'Asia/Shanghai');
+            error_reporting(E_ALL & ~(E_STRICT | E_NOTICE));
+            
             $requestUri = $_SERVER["REQUEST_URI"];
             $requestQueryString = $_SERVER["QUERY_STRING"];
 

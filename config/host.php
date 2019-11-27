@@ -32,4 +32,8 @@ return [
         'gitlab.psf-dev.com' => 'GITLAB代码管理',
         'www.pbccrc.org.cn' => '征信中心',
 	],
+
+    'news' => [
+        'cs.laravel-china.org' => 'laravel速查表',
+    ]
 ];

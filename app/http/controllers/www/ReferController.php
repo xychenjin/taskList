@@ -327,4 +327,8 @@ EOT;
 
     }
 
+    public function clock()
+    {
+        return view('refer.clock', []);
+    }
 }

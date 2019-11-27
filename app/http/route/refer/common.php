@@ -33,4 +33,5 @@ return [
 
 
     ['/golang', 'www\GolangController@index', 'golang.index'],
+    ['/clock', 'www\ReferController@clock', 'clock'],
 ];
