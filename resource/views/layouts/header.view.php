@@ -69,7 +69,7 @@
         </span>
 
         <span>
-            <a href="<?= route('clock') ?>" onclick="" target="_blank">查看时间</a>
+            <a href="<?= route('clock') ?>" onclick="" >查看时间</a>
         </span>
     </nav>
 </header>
