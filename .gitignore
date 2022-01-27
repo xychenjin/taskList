@@ -2,3 +2,6 @@
 .idea/*
 storage
 storage/*
+*.log
+runtime
+upload
